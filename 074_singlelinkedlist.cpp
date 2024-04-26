@@ -168,7 +168,7 @@ int main() {
 					system("pause");
 					system("cls");
 				}
-
+				else
 		}
 	}
 }
