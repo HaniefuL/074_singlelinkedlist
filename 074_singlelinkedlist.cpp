@@ -94,7 +94,7 @@ void traverse() {
 	if (listEmpty()) {
 		cout << "List Kosong" << endl;
 		system("pause");
-		system("c1s")
+		system("cls")
 		return;
 	}
 	else {
@@ -107,5 +107,11 @@ void traverse() {
 }
 
 void searchData() {
-
+	if (listEmpty()) {
+		cout << "List Kosong" << endl;
+		system("pause");
+		system("cls")
+	}
+	else {
+	}
 }
