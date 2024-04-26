@@ -11,17 +11,17 @@ Node* START = NULL;
 
 void addNode() {
 	int nim;
-	string name;
-	Node* nodebaru = new Node();
-	cout << "Masukan NIM ";
+	string nama;
+	Node* nodeBaru = new Node();
+	cout << "Masukkan NIM: ";
 	cin >> nim;
-	cout << "Masukan Nama: ";
+	cout << "Masukkan Nama: ";
 	cin >> nama;
 	nodeBaru->noMhs = nim;
 	nodeBaru->name = nama;
 
 	if (START == NULL || nim <= START->noMhs) {
-		if (START !== NULL && nim <= START->noMhs)
+		if (START != NULL && nim == START->noMhs)
 		{
 			cout << "NIM sudah ada" << endl;
 			return;
@@ -32,7 +32,7 @@ void addNode() {
 		return;
 	}
 
-	Node* previos = START;
+	Node* previous = START;
 	Node* current = START;
 
 	while ((current != NULL) && (nim >= current->noMhs))
@@ -47,10 +47,10 @@ void addNode() {
 	}
 
 	nodeBaru->next = current;
-	previous->next = nodeBaru
+	previous->next = nodeBaru;
 }
 
-bool serachNode(int nim, Node* current, Node previous) {
+bool serachNode(int nim, Node* current, Node* previous) {
 	previous = START;
 	current = START;
 	while (current != NULL && nim > current->noMhs)
@@ -79,7 +79,7 @@ bool deleteNode(int nim) {
 		return false;
 	previous->next = current->next;
 	if (current == START)
-		START == current->next;
+		START = current->next;
 	return true;
 }
 bool listEmpty() {
@@ -94,7 +94,7 @@ void traverse() {
 	if (listEmpty()) {
 		cout << "List Kosong" << endl;
 		system("pause");
-		system("cls")
+		system("cls");
 		return;
 	}
 	else {
@@ -110,18 +110,17 @@ void searchData() {
 	if (listEmpty()) {
 		cout << "List Kosong" << endl;
 		system("pause");
-		system("cls")
+		system("cls");
 		return;
 	}
 	else {
 		int nim;
-		cout << "Masukan NIM ";
+		cout << "Masukkan NIM: ";
 		cin >> nim;
-		Node* currntNode = START;
-		while (currenNode != NULL) {
+		Node* currentNode = START;
+		while (currentNode != NULL) {
 			if (currentNode->noMhs == nim) {
-				cout << "NIM: " << currentNode->noMhs << ", Nama: " << currentNode->name <<
-					endl;
+				cout << "NIM: " << currentNode->noMhs << ",Nama: " << currentNode->name << endl;
 				return;
 			}
 			currentNode = currentNode->next;
@@ -136,6 +135,7 @@ int main() {
 	{
 		try
 		{
+
 			cout << "1. Tambah Data" << endl;
 			cout << "2. Hapus Data" << endl;
 			cout << "3. Tampilkan Data" << endl;
@@ -188,5 +188,6 @@ int main() {
 		{
 			cout << "Terjadi Kesalahan" << endl;
 		}
+
 	} while (pilihan != 5);
 }
