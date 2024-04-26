@@ -111,7 +111,25 @@ void searchData() {
 		cout << "List Kosong" << endl;
 		system("pause");
 		system("cls")
+		return;
 	}
 	else {
+		int nim;
+		cout << "Masukan NIM ";
+		cin >> nim;
+		Node* currntNode = START;
+		while (currenNode != NULL) {
+			if (currentNode->noMhs == nim) {
+				cout << "NIM: " << currentNode->noMhs << ", Nama: " << currentNode->name <<
+					endl;
+				return;
+			}
+			currentNode = currentNode->next;
+		}
+		cout << "Data tidak ditemukan" << endl;
 	}
+}
+
+int main() {
+
 }
